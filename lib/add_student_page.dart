@@ -44,13 +44,13 @@ class _AddStudentPageState extends State<AddStudentPage> {
           padding: EdgeInsets.all(16.0),
           child: Form(
             key: _formKey,
-            autovalidateMode: AutovalidateMode.onUserInteraction,
+           //  autovalidateMode: AutovalidateMode.onUserInteraction,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 _buildTextField(
                   labelText: 'Name',
-                  controller: nameController,
+                controller: nameController,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Name is required';
@@ -63,7 +63,7 @@ class _AddStudentPageState extends State<AddStudentPage> {
                   controller: dobController,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Name is required';
+                      return 'Date is required';
                     }
                     return null;
                   },
@@ -208,6 +208,7 @@ class _AddStudentPageState extends State<AddStudentPage> {
           border: OutlineInputBorder(),
         ),
         validator: validator,
+        autovalidateMode: AutovalidateMode.onUserInteraction,
       ),
     );
   }
@@ -228,6 +229,7 @@ class _AddStudentPageState extends State<AddStudentPage> {
           border: OutlineInputBorder(),
         ),
         validator: validator,
+        autovalidateMode: AutovalidateMode.onUserInteraction,
       ),
     );
   }
